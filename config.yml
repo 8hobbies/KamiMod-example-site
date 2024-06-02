@@ -129,6 +129,7 @@ params:
   ShowToc: true
   # comments: false
   images: ["images/papermod-cover.png"]
+  RelatedPostsCount: 3
 
   profileMode:
     enabled: false
