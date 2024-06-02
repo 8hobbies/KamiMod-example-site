@@ -2,3 +2,7 @@
 	path = themes/KamiMod
 	url = https://github.com/8hobbies/KamiMod.git
 	branch = master
+[submodule "readme-in-static-site"]
+	path = readme-in-static-site
+	url = https://github.com/cljoly/readme-in-static-site.git
+	branch = main
