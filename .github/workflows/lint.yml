@@ -1,0 +1,23 @@
+name: Lint
+
+on:
+  push:
+    branches: ["exampleSite"]
+  pull_request:
+    branches: ["exampleSite"]
+
+jobs:
+  kamimod-post:
+    name: "Is the KamiMod post up-to-date?"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Run update-post.sh
+        run: ./update-post.sh
+
+      - name: Check file changes
+        run: git diff
