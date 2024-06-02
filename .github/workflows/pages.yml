@@ -1,0 +1,44 @@
+name: Build and Deploy Pages
+
+on:
+  push:
+    branches: ["exampleSite"]
+  pull_request:
+    branches: ["exampleSite"]
+
+jobs:
+  build:
+    name: Build Website
+    runs-on: ubuntu-24.04
+    container: hugomods/hugo:reg-git-0.126.3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Install GNU tar
+        run: apk add tar
+
+      - name: Build the site
+        run: hugo --minify
+
+      - name: Upload GitHub Pages Artifact
+        uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: public
+
+  deploy:
+    name: Deploy Pages
+    if: github.ref == 'refs/heads/exampleSite'
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: [build]
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
