@@ -20,4 +20,4 @@ jobs:
         run: ./update-post.sh
 
       - name: Check file changes
-        run: git diff
+        run: git diff || ( echo "::error::content/posts/kamimod/readme.md is out of sync. Please run ./update-post.sh" && exit 1 )
