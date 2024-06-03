@@ -5,4 +5,6 @@ description: Contains posts related to KamiMod
 cascade:
   - params:
       robotsNoIndex: false
+      sitemap:
+        disable: false
 ---
