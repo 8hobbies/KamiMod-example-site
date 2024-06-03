@@ -21,6 +21,6 @@ jobs:
 
       - name: Check file changes
         run: |
-          if [ $(git status --porcelain | grep readme) ]; then
+          if [ "$(git status --porcelain | grep readme)" ]; then
             echo "::error::content/posts/kamimod/readme.md is out of sync. Please run ./update-post.sh" && exit 1
           fi
