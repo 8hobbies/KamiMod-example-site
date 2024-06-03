@@ -19,6 +19,10 @@ features or improvements that have been left unmerged from PaperMod.
 - Configurable via `params.RelatedPostsCount`. `0` means no related posts. A positive number indicates the maximum number of related posts appended to the end of each post. Default: `0`.
 - See the [Hugo doc](https://gohugo.io/content-management/related/) for further configuration of the behavior of related posts.
 
+### Add last modified date to post header
+
+- [adityatelange/hugo-PaperMod#1337](https://github.com/adityatelange/hugo-PaperMod/pull/1337)
+
 ### Add an option `params.showDescription` to not display descriptions
 
 - [adityatelange/hugo-PaperMod#1533](https://github.com/adityatelange/hugo-PaperMod/pull/1533)
@@ -26,13 +30,9 @@ features or improvements that have been left unmerged from PaperMod.
   > Conceptually different from a content summary, a page description is typically used in metadata about the page.
 - Set `params.showDescription` to `true` to display descriptions, or `false` to hide descriptions. Default: `false`.
 
-### Add last modified date to post header
-
-- [adityatelange/hugo-PaperMod#1337](https://github.com/adityatelange/hugo-PaperMod/pull/1337)
-
 ### Remove the use of `accesskey` to improve accessibility
 
-- [adityatelange/hugo-PaperMod#1494](https://github.com/adityatelange/hugo-PaperMod/pull/1494))
+- [adityatelange/hugo-PaperMod#1494](https://github.com/adityatelange/hugo-PaperMod/pull/1494)
 - [MDN advises not using accesskeys for general purpose websites for various reasons](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey#accessibility_concerns).
 - [WebAIM also recommends against using accesskeys generally](https://webaim.org/techniques/keyboard/accesskey).
 
@@ -45,8 +45,12 @@ features or improvements that have been left unmerged from PaperMod.
 
 You may follow the [installation instructions from PaperMod](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-installation/), with the following changes:
 
-- Replace https://github.com/adityatelange/hugo-PaperMod with https://github.com/8hobbies/KamiMod
+- Replace `https://github.com/adityatelange/hugo-PaperMod` with `https://github.com/8hobbies/KamiMod`.
 - Replace all other occurrences of `PaperMod` with `KamiMod`.
+
+## Configurations
+
+Except for the features listed above, please follow the [PaperMod doc](https://github.com/adityatelange/hugo-PaperMod/wiki/Features) for configurations.
 
 ## Demo
 
