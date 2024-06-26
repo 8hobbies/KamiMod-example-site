@@ -31,16 +31,34 @@ features or improvements that have been left unmerged from PaperMod.
   > Conceptually different from a content summary, a page description is typically used in metadata about the page.
 - Set `params.showDescription` to `true` to display descriptions, or `false` to hide descriptions. Default: `false`.
 
+### Allow setting `ShowFullTextinRSS` in individual pages
+
+- [adityatelange/hugo-PaperMod#1542](https://github.com/adityatelange/hugo-PaperMod/pull/1542)
+
+### Add an option to exclude pages from the RSS feed
+
+- Setting `params.excludeFromRSS` to true in the frontmatter of a page to exclude it from the RSS feed.
+
+## Fixes and Changes
+
+### Replace `thumbnailUrl` with `logo` in the schema
+
+- [adityatelange/hugo-PaperMod#1488](https://github.com/adityatelange/hugo-PaperMod/pull/1488)
+- `thumbnailUrl` is not part of the [Organization schema](https://schema.org/Organization).
+
+### `<image><link>` in RSS should link to the permalink
+
+- [adityatelange/hugo-PaperMod#1545](https://github.com/adityatelange/hugo-PaperMod/pull/1545)
+
 ### Remove the use of `accesskey` to improve accessibility
 
 - [adityatelange/hugo-PaperMod#1494](https://github.com/adityatelange/hugo-PaperMod/pull/1494)
 - [MDN advises not using accesskeys for general purpose websites for various reasons](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey#accessibility_concerns).
 - [WebAIM also recommends against using accesskeys generally](https://webaim.org/techniques/keyboard/accesskey).
 
-### Replace `thumbnailUrl` with `logo` in the schema
+### Use `.Summary` as RSS description instead of `.Description`
 
-- [adityatelange/hugo-PaperMod#1488](https://github.com/adityatelange/hugo-PaperMod/pull/1488)
-- `thumbnailUrl` is not part of the [Organization schema](https://schema.org/Organization).
+- [Hugo description](https://gohugo.io/methods/page/description/) is conceptually for [metadata about a page](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adding_an_author_and_description). Using `.Description` in RSS leads to very little information for readers.
 
 ## Installation
 
