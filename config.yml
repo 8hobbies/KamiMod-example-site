@@ -157,6 +157,7 @@ params:
 
       - Source code of this demo is available on [GitHub](https://github.com/8hobbies/KamiMod-example-site).
 
+  social: true
   socialIcons:
     - name: github
       title: View Source on Github
