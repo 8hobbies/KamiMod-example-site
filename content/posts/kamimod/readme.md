@@ -40,9 +40,13 @@ features or improvements that have been left unmerged from PaperMod.
 
 - Setting `params.excludeFromRSS` to true in the frontmatter of a page to exclude it from the RSS feed.
 
-### Allow Extending `robots.txt`
+### Allow extending `robots.txt`
 
 - Content from `layouts/partials/extend_robots.txt` will be appended to the builtin `robots.txt` file.
+
+### Set preferred name for serach engines
+
+[Google relies the `WebSite` structured data](https://developers.google.com/search/docs/appearance/site-names#website) to find out the site name and homepage URL.
 
 ## Fixes and Changes
 
@@ -64,6 +68,25 @@ features or improvements that have been left unmerged from PaperMod.
 ### Use `.Summary` as RSS description instead of `.Description`
 
 - [Hugo description](https://gohugo.io/methods/page/description/) is conceptually for [metadata about a page](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adding_an_author_and_description). Using `.Description` in RSS leads to very little information for readers.
+
+### Use `site.Title` instead of `site.Params.Title`
+
+- `site.Params.Title` seems redundant and only used once in PaperMod.
+
+### Allow specifying `alternateName` in the `WebSite` structured data
+
+[`alternateName`](https://developers.google.com/search/docs/appearance/site-names#alternative) is
+used by Google to select a name of the site. In addition to `title`, you can specify alternate
+site names in `params.alternateSiteNames`:
+
+```yaml
+params:
+  alternateSiteNames: ["Name1", "Name2"]
+```
+
+### Don't show an output format as `<link rel=...>` if `rel` is empty
+
+- Many custom output formats don't need such a link element.
 
 ## Installation
 
