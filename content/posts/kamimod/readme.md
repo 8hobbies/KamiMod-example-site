@@ -42,18 +42,13 @@ features or improvements that have been left unmerged from PaperMod.
 
 ### Allow extending `robots.txt`
 
-- Content from `layouts/partials/extend_robots.txt` will be appended to the builtin `robots.txt` file.
+- Content from `layouts/partials/extend_robots.txt` is appended to the builtin `robots.txt` file.
 
 ### Set preferred name for serach engines
 
 [Google relies the `WebSite` structured data](https://developers.google.com/search/docs/appearance/site-names#website) to find out the site name and homepage URL.
 
 ## Fixes and Changes
-
-### Replace `thumbnailUrl` with `logo` in the schema
-
-- [adityatelange/hugo-PaperMod#1488](https://github.com/adityatelange/hugo-PaperMod/pull/1488)
-- `thumbnailUrl` is not part of the [Organization schema](https://schema.org/Organization).
 
 ### `<image><link>` in RSS should link to the permalink
 
@@ -72,6 +67,11 @@ features or improvements that have been left unmerged from PaperMod.
 ### Use `site.Title` instead of `site.Params.Title`
 
 - `site.Params.Title` seems redundant and only used once in PaperMod.
+
+### Add `utm_*` params to various places
+
+- The `utm_medium=sharing` param is added to the URLs shared by the share buttons.
+- The `utm_medium=rss` param is added to the RSS links.
 
 ### Allow specifying `alternateName` in the `WebSite` structured data
 
