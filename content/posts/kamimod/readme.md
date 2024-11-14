@@ -48,6 +48,17 @@ features or improvements that have been left unmerged from PaperMod.
 
 [Google relies the `WebSite` structured data](https://developers.google.com/search/docs/appearance/site-names#website) to find out the site name and homepage URL.
 
+#### Allow specifying `alternateName` in the `WebSite` structured data
+
+[`alternateName`](https://developers.google.com/search/docs/appearance/site-names#alternative) is
+used by Google to select a name of the site. In addition to `title`, you can specify alternate
+site names in `params.alternateSiteNames`:
+
+```yaml
+params:
+  alternateSiteNames: ["Name1", "Name2"]
+```
+
 ## Fixes and Changes
 
 ### `<image><link>` in RSS should link to the permalink
@@ -64,25 +75,10 @@ features or improvements that have been left unmerged from PaperMod.
 
 - [Hugo description](https://gohugo.io/methods/page/description/) is conceptually for [metadata about a page](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#adding_an_author_and_description). Using `.Description` in RSS leads to very little information for readers.
 
-### Use `site.Title` instead of `site.Params.Title`
-
-- `site.Params.Title` seems redundant and only used once in PaperMod.
-
 ### Add `utm_*` params to various places
 
 - The `utm_medium=sharing` param is added to the URLs shared by the share buttons.
 - The `utm_medium=rss` param is added to the RSS links.
-
-### Allow specifying `alternateName` in the `WebSite` structured data
-
-[`alternateName`](https://developers.google.com/search/docs/appearance/site-names#alternative) is
-used by Google to select a name of the site. In addition to `title`, you can specify alternate
-site names in `params.alternateSiteNames`:
-
-```yaml
-params:
-  alternateSiteNames: ["Name1", "Name2"]
-```
 
 ### Don't show an output format as `<link rel=...>` if `rel` is empty
 
