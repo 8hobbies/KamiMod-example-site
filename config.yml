@@ -3,7 +3,8 @@
 baseURL: "https://kamimod.8hob.io"
 title: KamiMod
 copyright: "© [KamiMod Contributors](https://github.com/8hobbies/KamiMod/graphs/contributors)"
-paginate: 5
+pagination:
+  pageSize: 5
 theme: [KamiMod]
 
 enableInlineShortcodes: true
